@@ -19,6 +19,7 @@ const StudentProfile = () => {
       <div className="menubar">
         <div className="menubar-option">Chatbox</div>
         <div className="menubar-option">Notifications</div>
+        <div className="menubar-option">Helpline</div>
       </div>
       <div className="body">
         <div className="form-title">Join a Chat</div>

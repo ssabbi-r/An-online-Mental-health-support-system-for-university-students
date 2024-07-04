@@ -17,6 +17,7 @@ const Homepage = () => {
           <a href="/teachers-login" className="nav-link">Teachers Login</a>
           <a href="/students-login" className="nav-link">Students Login</a>
           <a href="/registration" className="nav-link">Registration</a>
+          <a href="/teachers-login" className="nav-link">Admin</a>
         </nav>
       </header>
       <main className="main">

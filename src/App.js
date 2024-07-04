@@ -1,12 +1,13 @@
 // App.js
 
 import React from 'react';
-import LoginPage from './LoginPage';
+
+import Chat from './Chat/Chat'
 
 function App() {
   return (
     <div className="App">
-      <LoginPage />
+      <Chat/>
     </div>
   );
 }
