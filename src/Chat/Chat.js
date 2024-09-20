@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Chat.css';
+import css from './Chat.module.css';
 
 const Chat = ({ teacherName }) => {
   const [messages, setMessages] = useState([]);
@@ -13,25 +13,25 @@ const Chat = ({ teacherName }) => {
   };
 
   return (
-    <div className="chat-container">
-      <div className="chat-header">
+    <div className={css.chatcontainer}>
+      <div className={css.chatheader}>
         <h2>{teacherName}</h2>
       </div>
-      <div className="chat-body">
+      <div className={css.chatbody}>
         {messages.map((msg, index) => (
           <div key={index} className={`chat-message ${msg.sender}`}>
             {msg.text}
           </div>
         ))}
       </div>
-      <div className="chat-footer">
+      <div className={css.chatfooter}>
         <textarea
-          className="chat-input"
+          className={css.chatinput}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type your message here..."
         />
-        <button className="send-button" onClick={handleSendMessage}>
+        <button className={css.sendbutton} onClick={handleSendMessage}>
           Send
         </button>
       </div>

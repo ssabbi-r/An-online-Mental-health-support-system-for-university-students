@@ -30,7 +30,7 @@ body {
     z-index: 2;
 }
 
-.logo-container {
+.logocontainer {
     display: flex;
     align-items: center;
 }
@@ -49,7 +49,7 @@ body {
     gap: 70px;
 }
 
-.nav-link {
+.navlink {
     color: white;
     text-decoration: none;
 }

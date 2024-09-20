@@ -1,4 +1,4 @@
-/* TeacherProfile.css */
+/* StudentProfile.css */
 
 body,
 html {
@@ -20,11 +20,11 @@ html {
     color: white;
 }
 
-.header-logo {
+.headerlogo {
     width: 80px;
 }
 
-.header-university-name {
+.headeruniversityname {
     font-size: 18px;
     margin-top: 5px;
 }
@@ -39,7 +39,7 @@ html {
     padding: 10px 0;
 }
 
-.navbar-teacher-name {
+.navbarstudent-name {
     font-size: 16px;
 }
 
@@ -53,12 +53,12 @@ html {
     padding: 10px 0;
 }
 
-.menubar-option {
+.menubaroption {
     margin: 0 20px;
     cursor: pointer;
 }
 
-.menubar-option:hover {
+.menubaroption:hover {
     text-decoration: underline;
 }
 
@@ -68,17 +68,17 @@ html {
     align-items: center;
     justify-content: center;
     padding: 50px;
-    background-color: #7a7980;
+    background-color: #757479;
     flex-grow: 1;
 }
 
-.form-title {
+.formtitle {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 30px;
 }
 
-.form-container {
+.formcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,7 +90,7 @@ html {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.form-container input {
+.formcontainer input {
     width: 100%;
     padding: 15px;
     margin: 12px 0;
@@ -99,11 +99,11 @@ html {
     color: #333;
 }
 
-.form-container input::placeholder {
+.formcontainer input::placeholder {
     color: #aaa;
 }
 
-.form-container button {
+.formcontainer button {
     width: 100%;
     padding: 15px;
     margin-top: 20px;
@@ -115,6 +115,6 @@ html {
     font-size: 18px;
 }
 
-.form-container button:hover {
+.formcontainer button:hover {
     background-color: #0056b3;
 }

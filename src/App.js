@@ -2,12 +2,15 @@
 
 import React from 'react';
 
-import Chat from './Chat/Chat'
 
+
+import Routepath from './Routepath';
 function App() {
   return (
     <div className="App">
-      <Chat/>
+  <Routepath/>
+   
+   
     </div>
   );
 }

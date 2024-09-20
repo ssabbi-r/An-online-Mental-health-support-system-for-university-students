@@ -20,11 +20,11 @@ html {
     color: white;
 }
 
-.header-logo {
+.headerlogo {
     width: 80px;
 }
 
-.header-university-name {
+.headeruniversityname {
     font-size: 18px;
     margin-top: 5px;
 }
@@ -39,7 +39,7 @@ html {
     flex-grow: 1;
 }
 
-.profiles-container {
+.profilescontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +47,7 @@ html {
     max-width: 800px;
 }
 
-.profile-card {
+.profilecard {
     width: 100%;
     padding: 20px;
     margin: 15px 0;
@@ -58,14 +58,14 @@ html {
     flex-direction: column;
 }
 
-.profile-name {
+.profilename {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.profile-detail,
-.profile-room-id {
+.profiledetail,
+.profileroomid {
     font-size: 16px;
     margin-bottom: 5px;
 }
