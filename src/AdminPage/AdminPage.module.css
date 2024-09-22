@@ -1,63 +1,80 @@
+/* AdminPage.module.css */
+
 .adminpage {
+    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-color: #498cf0;
+    background-color: #f5f5f5;
+    padding: 20px;
+    min-height: 100vh;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.headerlogo {
-    width: 100px;
-    height: 100px;
-}
-
-.header-university-name {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.admin-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
-    max-width: 800px;
-}
-
-.approval-option {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 600px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.approval-option h2 {
-    font-size: 24px;
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.adminbody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.approvaloption {
+    background-color: white;
+    width: 50%;
+    padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
-.approval-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 5px;
+.approvaloption h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.approvalbutton,
+.rejectionbutton {
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
 }
 
-.approval-button:hover {
-    background-color: #0056b3;
+.approvalbutton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.approvalbutton:hover {
+    background-color: #45a049;
+}
+
+.rejectionbutton {
+    background-color: #f44336;
+    color: white;
+}
+
+.rejectionbutton:hover {
+    background-color: #e53935;
 }
