@@ -1,0 +1,70 @@
+/* AdminLoginPage.module.css */
+
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.loginBox {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.loginBox h1 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.loginBox h2 {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.inputGroup input:focus {
+    border-color: #4CAF50;
+}
+
+.loginButton {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: #45a049;
+}
