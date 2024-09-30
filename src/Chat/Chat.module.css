@@ -1,72 +1,105 @@
-.chatcontainer {
+.chatContainer {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    max-width: 600px;
-    height: 60vh;
-    /* Adjust the overall height */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    max-width: 800px;
+    height: 90vh;
     margin: auto;
-    /* Center the chat container horizontally */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
 }
 
-.chatheader {
-    background-color: #000;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-}
-
-.chatbody {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    border-top: 1px solid #d1cbdb;
-    border-bottom: 1px solid #8e889c;
-    max-height: 400px;
-    /* Limit the height of the chat body */
-}
-
-.chatmessage {
-    margin-bottom: 10px;
+.chatHeader {
     padding: 10px;
-    border-radius: 5px;
-    max-width: 70%;
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.chatBox {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.userMessage {
+    background-color: #e1ffc7;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-self: flex-end;
+    max-width: 60%;
     word-wrap: break-word;
 }
 
-.chatmessage.student {
-    background-color: #20e7b6;
-    align-self: flex-end;
+.receiverMessage {
+    background-color: #d3d3d3;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+    max-width: 60%;
+    word-wrap: break-word;
 }
 
-.chatfooter {
+.messageInput {
     display: flex;
     padding: 10px;
-    background-color: #f0f2f5;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
 }
 
-.chatinput {
+.messageInput input {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
+    /* Increased padding for larger input box */
+    height: 60px;
+    /* Increased height for larger input box */
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: 1px solid #ddd;
     margin-right: 10px;
+    font-size: 18px;
+    /* Increased font size */
 }
 
-.sendbutton {
-    background-color: #007bff;
-    color: #fff;
+.messageInput button {
+    padding: 15px 25px;
+    background-color: #4caf50;
+    color: white;
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
+    /* Increased button font size */
 }
 
-.sendbutton:hover {
-    background-color: #0056b3;
+.messageInput button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .chatContainer {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .chatHeader {
+        font-size: 20px;
+    }
+
+    .messageInput input {
+        font-size: 16px;
+        height: 50px;
+        /* Reduced height for smaller screens */
+    }
+
+    .messageInput button {
+        font-size: 16px;
+    }
 }

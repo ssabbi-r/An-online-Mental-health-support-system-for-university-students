@@ -7,7 +7,7 @@ import React from 'react';
 import Routepath from './Routepath';
 function App() {
   return (
-    <div className="App">
+    <div className='app'>
   <Routepath/>
    
    
