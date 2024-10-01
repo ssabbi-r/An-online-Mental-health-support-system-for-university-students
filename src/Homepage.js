@@ -17,7 +17,7 @@ const Homepage = () => {
           <a href={`/login/${"teacher"}`} className={css.navlink}>Teachers Login</a>
           <a href={`/login/${"student"}`} className={css.navlink}>Students Login</a>
           <a href="/registration" className={css.navlink}>Registration</a>
-          <a href="/teachers-login" className={css.navlink}>Admin</a>
+          <a href={`/login/${"admin"}`} className={css.navlink}>Admin Login</a>
         </nav>
       </header>
       <main className={css.main}>

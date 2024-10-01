@@ -1,7 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './AdminPage.module.css';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const AdminPage = () => {
+  let navigate=useNavigate();
+  let [st,sst]=useState([{}]);
+  let [te,ste]=useState([{}]);
+  let token=localStorage.getItem('admin');
+  let [ref,sref]=useState(0);
+  useEffect(()=>{
+    if(!token){
+      navigate('/');
+    }
+    else{
+      axios.get(`http://localhost:8000/admin/info`,
+        {
+          headers:{
+            Authorization:token
+          }
+
+      })
+      .then((res)=>{
+        if(res.data.ok){
+          sst(res.data.student);
+          ste(res.data.teacher);
+          console.log(res.data.student);
+          console.log(res.data.teacher);
+
+        }
+        else{
+          navigate('/');
+        }
+      })
+    }
+  },[ref]);
   return (
     <div className={css.adminpage}>
       <header className={css.header}>
@@ -10,12 +43,82 @@ const AdminPage = () => {
       </header>
       <div className={css.adminbody}>
         <div className={css.approvaloption}>
-          <h2>Teacher Account Approval</h2>
-          <button className={css.approvalbutton}>Approve Teacher Accounts</button>
+          <h2>Student Account Approval</h2>
+          {st && st.map((it,i)=>{
+            return <div key={i}>
+              <h3>Student Name: {it.name}</h3>
+              <h4>Id: {it.id}</h4>
+                   <button className={css.approvalbutton} 
+                   onClick={()=>{
+                    
+                      axios.get(`http://localhost:8000/student/ap/${it.id}`)
+                      .then((res)=>{
+                        if(res.data.ok){
+                          alert('Approved');
+                          sref(ref=>ref+1);
+                        }
+                      })
+                    }
+                   }
+                   >Approve</button>
+                   <button className={css.approvalbutton}
+                   onClick={()=>{
+                   
+                      axios.get(`http://localhost:8000/student/rj/${it.id}`)
+                      .then((res)=>{
+                        if(res.data.ok){
+                          alert('Rejected');
+                          sref(ref=>ref+1);
+                        }
+                      })
+                    }
+                   }
+                   >Reject</button> 
+            </div>
+          })}
+          <div>
+            
+        
+          </div>
         </div>
         <div className={css.approvaloption}>
-          <h2>Student Account Approval</h2>
-          <button className={css.approvalbutton}>Approve Student Accounts</button>
+          <h2>Teacher Account Approval</h2>
+          <div>
+          {te && te.map((it,i)=>{
+            return <div key={i}>
+              <h3>Teacher Name: {it.name}</h3>
+              <h4>Id: {it.id}</h4>
+                   <button className={css.approvalbutton}
+                    onClick={()=>{
+                      
+                        axios.get(`http://localhost:8000/teacher/ap/${it.id}`)
+                        .then((res)=>{
+                          if(res.data.ok){
+                            alert('Approved');
+                            sref(ref=>ref+1);
+                          }
+                        })
+                      }
+                     }
+                   
+                   >Approve</button>
+                   <button className={css.approvalbutton}
+                    onClick={()=>{
+                      
+                        axios.get(`http://localhost:8000/teacher/rj/${it.id}`)
+                        .then((res)=>{
+                          if(res.data.ok){
+                            alert('reject');
+                            sref(ref=>ref+1);
+                          }
+                        })
+                      }
+                     }
+                   >Reject</button> 
+            </div>
+          })}
+          
+          </div>
         </div>
       </div>
     </div>

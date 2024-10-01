@@ -5,6 +5,9 @@ import Homepage from './Homepage.js'
 import LoginPage from './LoginPage.js';
 import RegistrationPage from './RegistrationPage.js';
 import HelplinePage from './HelplinePage/HelplinePage.js';
+import StudentProfile from './StudentProfile/StudentProfile.js'
+import TeacherProfile from './TeacherProfile/TeacherProfile.js'
+import AdminPage from './AdminPage/AdminPage.js';
 export default function Routepath() {
   return (
     <div>
@@ -14,6 +17,9 @@ export default function Routepath() {
         <Route path={`/login/:name`} element={<LoginPage/>}></Route>
         <Route path={`/registration`} element={<RegistrationPage/>}></Route>
         <Route path={`/helpline`} element={<HelplinePage/>}></Route>
+        <Route path={`/student/profile/:id`} element={<StudentProfile/>}></Route>
+        <Route path={`/teacher/profile/:id`} element={<TeacherProfile/>}></Route>
+        <Route path={`/admin/page`} element={<AdminPage/>}></Route>
        </Routes>
         </BrowserRouter> 
     </div>
