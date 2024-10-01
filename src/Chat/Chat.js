@@ -1,48 +1,54 @@
-import React, { useState } from 'react';
-import css from './Chat.module.css';
+import React, { useState } from "react";
+import styles from "./Chat.module.css";
 
 const Chat = () => {
-  const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
+  const [currentMessage, setCurrentMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
 
-  const handleSendMessage = () => {
-    if (input.trim()) {
-      const newMessage = {
-        text: input,
-        sender: 'user' // This can be 'user' or 'receiver'
+  const sendMessage = () => {
+    if (currentMessage.trim() !== "") {
+      const messageData = {
+        message: currentMessage,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        sender: "You",
       };
-      setMessages([...messages, newMessage]);
-      setInput('');
+      setMessageList([...messageList, messageData]);
+      setCurrentMessage("");
     }
   };
 
   return (
-    <div className={css.chatContainer}>
-      <header className={css.chatHeader}>
-        <h1>Chat</h1>
-      </header>
-
-      <div className={css.chatBox}>
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={
-              message.sender === 'user' ? css.userMessage : css.receiverMessage
-            }
-          >
-            {message.text}
-          </div>
-        ))}
+    <div className={styles.chatWindow}>
+      <div className={styles.chatHeader}>
+        <h3>Live Chat</h3>
       </div>
-
-      <div className={css.messageInput}>
+      <div className={styles.chatBody}>
+        <div className={styles.messageContainer}>
+          {messageList.map((message, index) => (
+            <div key={index} className={`${styles.message} ${styles.you}`}>
+              <div className={styles.messageContent}>
+                <p>{message.message}</p>
+              </div>
+              <div className={styles.messageMeta}>
+                <span className={styles.time}>{message.time}</span>
+                <span className={styles.sender}>{message.sender}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.chatFooter}>
         <input
           type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your message..."
+          value={currentMessage}
+          className={styles.inputBox}
+          placeholder="Type a message..."
+          onChange={(e) => setCurrentMessage(e.target.value)}
+          onKeyPress={(e) => e.key === "Enter" && sendMessage()}
         />
-        <button onClick={handleSendMessage}>Send</button>
+        <button className={styles.sendButton} onClick={sendMessage}>
+          Send
+        </button>
       </div>
     </div>
   );
