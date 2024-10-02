@@ -19,8 +19,10 @@ const LoginPage = () => {
   }
   let login=(e)=>{
     e.preventDefault();
+    console.log(name);
     axios.post(`http://localhost:8000/${name}/login`,data)
     .then((res)=>{
+      console.log(res.data)
       if(res.data.ok){
         console.log(res.data);
         if(res.data.person=="Student"){

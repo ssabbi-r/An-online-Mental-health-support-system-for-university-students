@@ -48,7 +48,7 @@ const TeacherProfile = () => {
       </div>
       <div className={css.menubar}>
         <div className={css.menubaroption}>Chatbox</div>
-        <div className={css.menubaroption}>Notifications</div>
+        <div className={css.menubaroption}><a href={`/inbox/teacher/${id}`}>Notifications</a></div>
       </div>
       <div className={css.body}>
         <div className={css.formtitle}>Join a Chat</div>

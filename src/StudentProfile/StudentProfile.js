@@ -24,6 +24,7 @@ const StudentProfile = () => {
 
       })
       .then((res)=>{
+        console.log(res.data)
         if(res.data.ok){
           sdata(res.data.info);
         }
@@ -48,7 +49,7 @@ const StudentProfile = () => {
       <div className={css.menubar}>
         <div className={css.menubaroption}>Chatbox</div>
         <div className={css.menubaroption}>Notifications</div>
-        <div className={css.menubaroption}>Helpline</div>
+        <div className={css.menubaroption}><a href={`/helpline/${'student'}/${id}`}>Helpline</a></div>
       </div>
       <div className={css.body}>
         <div className={css.formtitle}>Join a Chat</div>

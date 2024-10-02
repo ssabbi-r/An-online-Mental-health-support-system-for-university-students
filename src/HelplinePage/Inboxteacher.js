@@ -1,16 +1,16 @@
 // HelplinePage.js
 
 import React, { useEffect, useState } from 'react';
-import css from './HelplinePage.module.css';
+
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import css from './HelplinePage.module.css';
 
-
-const HelplinePage = () => {
-  let {id,person}=useParams();
+const Inboxteacher = () => {
+  let {id}=useParams();
   let [profiles,sprofile]=useState([{}]);
   useEffect(()=>{
-   axios.get('http://localhost:8000/all/teacher/list')
+   axios.get(`http://localhost:8000/all/student/list/${id}`)
    .then((res)=>{
     if(res.data.ok){
       sprofile(res.data.list)
@@ -31,9 +31,9 @@ const HelplinePage = () => {
       <div className={css.body}>
         <div className={css.profilescontainer}>
           {profiles.map((profile, index) => (
-            <a style={{textDecoration:'none',color:'black'}} href={`/chat/${person}/${profile.id}/${id}`}>
-              <div key={index} className={css.profilecard}>
-              <div className={css.profilename}>Name: {profile.name}</div>
+            <a key={index} style={{textDecoration:'none',color:'black'}} href={`/chat/${'teacher'}/${id}/${profile.sid}`}>
+              <div className={css.profilecard}>
+              <div className={css.profilename}>Name: {profile.sid}</div>
               
             </div>
             </a>
@@ -44,4 +44,4 @@ const HelplinePage = () => {
   );
 };
 
-export default HelplinePage;
+export default Inboxteacher;
